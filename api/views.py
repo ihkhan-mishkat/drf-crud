@@ -1,6 +1,14 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from rest_framework import generics
+from .serializers import ContactlistSerializer
+from .models import Contactlist
 
-from django.shortcuts import render
+class CreateView(generics.ListCreateAPIView):
+    queryset = Contactlist.objects.all()
+    serializer_class = ContactlistSerializer
 
-# Create your views here.
+    def perform_create(self, serializer):
+        serializer.save()
+
+class DetailsView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Contactlist.objects.all()
+    serializer_class = ContactlistSerializer
