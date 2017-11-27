@@ -7,8 +7,10 @@ class ModelTestCase(TestCase):
 
     def setUp(self):
         """Define the test client and other test variables."""
-        self.contactlist_name = "Write world class code"
+        self.contactlist_name = "ABC"
+	self.contactlist_phone = "1234"
         self.contactlist = Contactlist(name=self.contactlist_name)
+	self.contactlist = Contactlist(phone=self.contactlist_phone)
 
     def test_model_can_create_a_contactlist(self):
         """Test the contactlist model can create a contactlist."""
