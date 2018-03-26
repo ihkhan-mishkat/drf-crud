@@ -1,1 +1,1 @@
-# drf-crud
+# DRF-CRUD sample app
